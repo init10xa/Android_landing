@@ -5,9 +5,16 @@
   padding: 0;
   overflow: hidden;
   background-image: url(../Assets/smile.jpg);
+  padding-top: 150px;
 }
 body{
   margin: 0;
   padding: 0;
 
+}
+.white{
+  text-decoration-color: white;
+}
+h1,h2{
+  color: white;
 }
