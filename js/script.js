@@ -1,26 +1,22 @@
-(function () {
-var textFile = null,
-  makeTextFile = function (text) {
-    var data = new Blob([text], {type: 'text/plain'});
+function postContactToGoogle() {
+       var fname = $('#fname').val();
+       var lnmae = $('#lname').val();
+       var Email = $('#Email').val();
 
-    // If we are replacing a previously generated file we need to
-    // manually revoke the object URL to avoid memory leaks.
-    if (textFile !== null) {
-      window.URL.revokeObjectURL(textFile);
-    }
-
-    textFile = window.URL.createObjectURL(data);
-
-    return textFile;
-  };
-
-
-  var create = document.getElementById('create'),
-    textbox = document.getElementById('textbox');
-
-  create.addEventListener('click', function () {
-    var link = document.getElementById('downloadlink');
-    link.href = makeTextFile(textbox.value);
-    link.style.display = 'block';
-  }, false);
-})();
+           $.ajax({
+               url: "https://docs.google.com/spreadsheets/d/1o609FPvDMs7XZGKsyYrgdvhGpT-iN6eig0oUIcxVUOE/edit#gid=1831987588",
+               data: { "entry_1306721146": Email,
+               "entry_676487481": fname, "entry_1306721146":
+               lname},
+               type: "POST",
+               dataType: "xml",
+               statusCode: {
+                   0: function () {
+                       window.location.replace("ThankYou.html");
+                   },
+                   200: function () {
+                       window.location.replace("ThankYou.html");
+                   }
+               }
+           });
+   }

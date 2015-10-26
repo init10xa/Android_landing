@@ -15,7 +15,6 @@
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="style/style.css" media="screen" title="no title" charset="utf-8">
-    <script type="text/javascript" src="js/script.js"></script>
     <script src="http://use.edgefonts.net/shadows-into-light-two:n4:all.js"></script>
   </head>
   <body>
@@ -35,23 +34,18 @@
 
           </div>
           <div class="col s6 txt">
-          <form action="https://docs.google.com/spreadsheets/d/1o609FPvDMs7XZGKsyYrgdvhGpT-iN6eig0oUIcxVUOE/edit#gid=1831987588">
-          <input placeholder="First Name" id="first_name" type="text" class="validate">
-          <input id="last_name" type="text" class="validate" placeholder="last Name">
-          <input id="textbox" type="email" class="validate " placeholder="Email">
+          <form action="https://docs.google.com/spreadsheets/d/1o609FPvDMs7XZGKsyYrgdvhGpT-iN6eig0oUIcxVUOE/edit#gid=1831987588"
+          method="POST" id="ss-form" target="_self" onsubmit="">
+          <input placeholder="First Name" name="fname" type="text" class="validate"id="fname">
+          <input name="lname" type="text" class="validate" placeholder="last Name" id="lname">
+          <input name="Email"  type="email" class="validate " placeholder="Email" id="Email">
         </div>
-
-
       </div>
-
-          <button class="btn" type="submit" name="action" id="create">Subscribe</button> <a download="info.txt" id="downloadlink" style="display: none">Download</a>
+        <button class="btn" type="button" id="ButtonSubmit" onclick="postContactToGoogle()">Subscribe</button>
         </div>
              </form>
-
           </div>
-
         </div>
-
       </div>
   </div>
 
@@ -59,10 +53,10 @@
 
 
        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js">
-
        </script>
     <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script type="text/javascript" src="js/script.js"></script>
   </body>
 </html>
